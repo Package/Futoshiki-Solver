@@ -21,7 +21,7 @@ public class Square implements SquareValidation {
 
     /**
      * Has this Square been assigned a value?
-     * @return - whether the square has a value
+     * @return boolean - whether the square has a value
      */
     public boolean hasValue() {
         return value != 0;
@@ -29,7 +29,7 @@ public class Square implements SquareValidation {
 
     /**
      * Returns the Squares value.
-     * @return - the value of the Square
+     * @return int - the value of the Square
      */
     public int getValue() {
         return value;
@@ -59,6 +59,13 @@ public class Square implements SquareValidation {
         this.lessThan = square;
     }
 
+    /**
+     * Validates that if the provided value was used as this Square's value that it would not break
+     * the less than constraint.
+     *
+     * @param value - the value to check
+     * @return boolean - whether or not the value is valid considering the less than constraint.
+     */
     @Override
     public boolean lessThanIsValid(int value) {
         if (this.lessThan == null || !lessThan.hasValue()) {
@@ -68,6 +75,13 @@ public class Square implements SquareValidation {
         return value < lessThan.getValue();
     }
 
+    /**
+     * Validates that if the provided value was used as this Square's value that it would not break
+     * the greater than constraint.
+     *
+     * @param value - the value to check
+     * @return boolean - whether or not the value is valid considering the greater than constraint.
+     */
     @Override
     public boolean greaterThanIsValid(int value) {
         if (this.greaterThan == null || !greaterThan.hasValue()) {

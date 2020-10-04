@@ -10,7 +10,7 @@ public class Solver {
      * Kicks off the solving process and reports back to the console whether the
      * Puzzle was successfully able to be solved.
      *
-     * @return - whether the Puzzle was successfully solved.
+     * @return boolean - whether the Puzzle was successfully solved.
      */
     public boolean solve(Puzzle puzzle) {
         this.puzzle = puzzle;
@@ -31,7 +31,7 @@ public class Solver {
      *
      * @param x - current X location
      * @param y - current Y location
-     * @return - the result of solving the next position on the board.
+     * @return boolean - the result of solving the next position on the board.
      */
     private boolean solveNext(int x, int y) {
         if (y >= (Puzzle.PUZZLE_SIZE - 1)) {
@@ -47,7 +47,7 @@ public class Solver {
      * @param x     - the X location
      * @param y     - the Y location
      * @param value - the value to consider
-     * @return - whether this move is valid or not.
+     * @return boolean - whether this move is valid or not.
      */
     private boolean canPlayValue(int x, int y, int value) {
         var grid = puzzle.getGrid();
@@ -69,7 +69,7 @@ public class Solver {
      *
      * @param x - starting X location
      * @param y - starting Y location
-     * @return - whether the Puzzle has been solved
+     * @return boolean - whether the Puzzle has been solved
      */
     private boolean performSolve(int x, int y) {
         // Edge case to stop the recursion, when the Puzzle is solved we can return.

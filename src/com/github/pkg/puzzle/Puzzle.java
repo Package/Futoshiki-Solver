@@ -57,7 +57,7 @@ public class Puzzle {
     /**
      * Determine whether the Puzzle is considered solved, that is each Square has been populated with a value.
      *
-     * @return - whether the Puzzle is solved or not.
+     * @return boolean - whether the Puzzle is solved or not.
      */
     public boolean isSolved() {
         for (int x = 0; x < PUZZLE_SIZE; x++) {
@@ -73,7 +73,7 @@ public class Puzzle {
 
     /**
      * Returns the Puzzle grid.
-     * @return - the Puzzle grid
+     * @return Square[][] - the Puzzle grid
      */
     public Square[][] getGrid() {
         return grid;
@@ -82,7 +82,7 @@ public class Puzzle {
     /**
      * Build a string representation of the Puzzle for display to system console.
      *
-     * @return - a string representation of the Puzzle.
+     * @return String - a string representation of the Puzzle.
      */
     @Override
     public String toString() {
